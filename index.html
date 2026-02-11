@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirzakhani | Resiliencia sobre Resistencia</title>
+    <meta name="description" content="Aprende para crecer. Enseñar para transformar. Únete a la comunidad exclusiva de Mirzakhani y domina la mentalidad de resiliencia.">
+    
+    <!-- Tipografía de sistema premium para carga instantánea -->
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: #111111;
+            --text-main: #ffffff;
+            --text-dim: #a1a1a1;
+            --accent: #6366f1;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #20ba5a;
+            --tiktok: #ff0050;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utilidades */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent), var(--whatsapp));
+            margin-bottom: 20px;
+            padding: 3px;
+        }
+
+        .profile-img div {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
+        .subtext {
+            color: var(--text-dim);
+            font-size: 1rem;
+            max-width: 300px;
+            margin: 0 auto 30px;
+        }
+
+        /* Botones */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: transform 0.2s, filter 0.2s;
+            margin-bottom: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: #000;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--glass);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .microcopy {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: -8px;
+            margin-bottom: 20px;
+        }
+
+        /* Authority Block */
+        .authority {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .grid-points {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .point {
+            background: var(--glass);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent);
+            font-size: 0.95rem;
+        }
+
+        /* Benefits */
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .benefit-card svg {
+            width: 30px;
+            height: 30px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .benefit-card h3 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .benefit-card p {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: linear-gradient(180deg, transparent, var(--glass), transparent);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .counter-container {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .counter-text {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .testimony {
+            font-style: italic;
+            background: var(--glass);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Countdown */
+        .countdown-box {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 24px;
+            border: 1px solid var(--accent);
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .time-unit {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .time-val {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .time-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-quote {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-dim);
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+            color: var(--glass);
+            margin-top: 30px;
+        }
+
+        /* Animación suave para el botón principal */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <!-- HERO -->
+        <header>
+            <div class="profile-img">
+                <div>M</div>
+            </div>
+            <div class="tagline">Mirzakhani</div>
+            <h1>RESILIENCIA SOBRE RESISTENCIA</h1>
+            <p class="subtext">Aprender para crecer. Enseñar para transformar.</p>
+            
+            <a href="https://chat.whatsapp.com/ENLACE_DE_EJEMPLO" class="btn btn-whatsapp pulse">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Únete a la Comunidad Gratis
+            </a>
+            <div class="microcopy">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Acceso inmediato. Gratis. Sin spam.
+            </div>
+
+            <a href="https://tiktok.com/@TU_USUARIO" class="btn btn-secondary">
+                Ver contenido en TikTok
+            </a>
+        </header>
+
+        <!-- AUTHORITY -->
+        <section class="authority reveal">
+            <div class="grid-points">
+                <div class="point">Educador digital enfocado en resultados reales.</div>
+                <div class="point">Aprende lo que nadie te enseña sobre disciplina mental.</div>
+                <div class="point">Comunidad diseñada para el crecimiento colectivo.</div>
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="reveal">
+            <h2 class="section-title">¿Qué ganas al entrar?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    <h3>Clases en Vivo</h3>
+                    <p>Sesiones exclusivas todas las semanas.</p>
+                </div>
+                <div class="benefit-card">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <h3>Recursos PDF</h3>
+                    <p>Guías prácticas para descargar.</p>
+                </div>
+                <div class="benefit-card">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h3>Tips Diarios</h3>
+                    <p>Consejos accionables cada mañana.</p>
+                </div>
+                <div class="benefit-card">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <h3>Avisos VIP</h3>
+                    <p>Sé el primero en enterarte de todo.</p>
+                </div>
+            </div>
+            
+            <a href="https://chat.whatsapp.com/ENLACE_DE_EJEMPLO" class="btn btn-whatsapp">
+                Únete a la Comunidad Gratis
+            </a>
+        </section>
+
+        <!-- SOCIAL PROOF -->
+        <section class="social-proof reveal">
+            <div class="counter-container" id="member-counter">1,240</div>
+            <p class="counter-text">Personas ya están aprendiendo en comunidad</p>
+            <div class="testimony">
+                "Cambió mi forma de ver la disciplina. No es solo motivación, es estructura real."
+            </div>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--accent);">— Estudiante Activo</p>
+        </section>
+
+        <!-- CTA CENTRAL -->
+        <section class="reveal" style="padding: 40px 0; text-align: center;">
+            <h2 style="margin-bottom: 20px;">No aprendas solo.<br>Crece en comunidad.</h2>
+            <a href="https://chat.whatsapp.com/ENLACE_DE_EJEMPLO" class="btn btn-whatsapp" style="padding: 22px;">
+                ¡QUIERO ENTRAR AHORA!
+            </a>
+            <div class="microcopy">Acceso 100% gratuito por tiempo limitado</div>
+        </section>
+
+        <!-- TIKTOK LIVE COUNTDOWN -->
+        <section class="countdown-box reveal">
+            <h3>PRÓXIMO LIVE EDUCATIVO</h3>
+            <div class="timer" id="countdown">
+                <div class="time-unit">
+                    <span class="time-val" id="hours">00</span>
+                    <span class="time-label">Horas</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-val" id="minutes">00</span>
+                    <span class="time-label">Min</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-val" id="seconds">00</span>
+                    <span class="time-label">Seg</span>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-dim);">No te pierdas la próxima sesión de transformación.</p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-quote">"La evolución es el único camino."</div>
+            <a href="https://chat.whatsapp.com/ENLACE_DE_EJEMPLO" class="btn btn-whatsapp">
+                Únete a la Comunidad Gratis
+            </a>
+            <p class="copyright">© 2026 Mirzakhani. Todos los derechos reservados.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Animaciones de Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Contador Dinámico de Miembros
+        function updateCounter() {
+            const counterEl = document.getElementById('member-counter');
+            let count = 1240;
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    count += Math.floor(Math.random() * 2);
+                    counterEl.innerText = count.toLocaleString();
+                }
+            }, 3000);
+        }
+        updateCounter();
+
+        // Cuenta Regresiva (Próximo Live - Ejemplo 24h)
+        function startCountdown() {
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            // Set target to tomorrow at 8:00 PM
+            let target = new Date();
+            target.setHours(20, 0, 0, 0);
+            if (new Date() > target) target.setDate(target.getDate() + 1);
+
+            function updateTimer() {
+                const now = new Date();
+                const diff = target - now;
+
+                const h = Math.floor(diff / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                hoursEl.innerText = h.toString().padStart(2, '0');
+                minutesEl.innerText = m.toString().padStart(2, '0');
+                secondsEl.innerText = s.toString().padStart(2, '0');
+            }
+
+            setInterval(updateTimer, 1000);
+            updateTimer();
+        }
+        startCountdown();
+    </script>
+</body>
+</html>
