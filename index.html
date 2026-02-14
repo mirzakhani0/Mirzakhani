@@ -27,6 +27,17 @@
             --tiktok: #ff0050;
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
+            --star-color: rgba(99, 102, 241, 1);
+        }
+
+        body.light-theme {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-dim: #64748b;
+            --glass: rgba(0, 0, 0, 0.03);
+            --border: rgba(0, 0, 0, 0.08);
+            --star-color: rgba(99, 102, 241, 0.6);
         }
 
         * {
@@ -34,6 +45,7 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
@@ -43,6 +55,25 @@
             line-height: 1.6;
             overflow-x: hidden;
             animation: fadeIn 1.2s ease-out;
+        }
+
+        /* Botón de Tema */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         @keyframes fadeIn {
@@ -325,9 +356,50 @@
         .pulse {
             animation: pulse 2s infinite ease-in-out;
         }
+
+        /* Estrellas Fugaces */
+        .night {
+            position: fixed;
+            width: 150%;
+            height: 150%;
+            transform: rotateZ(45deg);
+            top: -50%;
+            left: -20%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shooting_star {
+            position: absolute;
+            left: var(--pos-x);
+            top: var(--pos-y);
+            height: 2px;
+            background: linear-gradient(-45deg, var(--star-color), rgba(255, 255, 255, 0));
+            border-radius: 999px;
+            filter: drop-shadow(0 0 6px var(--star-color));
+            animation: tail var(--dur) ease-in-out infinite, shooting var(--dur) ease-in-out infinite;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
+
+        @keyframes tail {
+            0% { width: 0; opacity: 0; }
+            30% { width: 100px; opacity: 1; }
+            100% { width: 0; opacity: 0; }
+        }
+
+        @keyframes shooting {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(1000px); }
+        }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" id="theme-btn" aria-label="Cambiar tema">
+        <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+    </button>
+    <div class="night" id="star-container"></div>
 
     <main class="container">
         <!-- HERO -->
@@ -505,6 +577,56 @@
             updateTimer();
         }
         startCountdown();
+
+        // Generación de Estrellas Fugaces
+        const container = document.getElementById("star-container");
+        const fragment = document.createDocumentFragment();
+
+        for (let i = 0; i < 20; i++) {
+            const span = document.createElement("span");
+            span.classList.add("shooting_star");
+
+            span.style.setProperty("--pos-x", `${Math.random() * 100}%`);
+            span.style.setProperty("--pos-y", `${Math.random() * 100}%`);
+            span.style.setProperty("--dur", `${2 + Math.random() * 3}s`);
+            span.style.setProperty("--delay", `${Math.random() * 10}s`);
+
+            fragment.appendChild(span);
+        }
+        container.appendChild(fragment);
+
+        // Lógica de Modo Claro/Oscuro
+        const themeBtn = document.getElementById('theme-btn');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        const sunIcon = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+        const moonIcon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+
+        function setTheme(isLight) {
+            if (isLight) {
+                body.classList.add('light-theme');
+                themeIcon.innerHTML = moonIcon;
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.remove('light-theme');
+                themeIcon.innerHTML = sunIcon;
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Cargar preferencia guardada
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            setTheme(true);
+        } else {
+            setTheme(false);
+        }
+
+        themeBtn.addEventListener('click', () => {
+            const isLight = body.classList.contains('light-theme');
+            setTheme(!isLight);
+        });
     </script>
 </body>
 </html>
