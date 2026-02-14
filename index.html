@@ -102,7 +102,7 @@
             display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--accent-alt); 
             box-shadow: 0 0 20px var(--glow); font-size: 1.1rem; 
         }
-        .step-card h4 { font-size: 1rem; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+        .step-card h4 { font-size: 1rem; font-weight: 900; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
         .step-card p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.4; }
 
         /* Benefits */
@@ -122,9 +122,14 @@
         .academic-accordion { margin-bottom: 20px; }
         .acc-group { margin-bottom: 10px; border-radius: 18px; overflow: hidden; background: var(--glass); border: 1px solid var(--border); }
         .acc-header { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--text-dim); }
-        .acc-header.selected { color: var(--accent-alt); }
-        .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: rgba(0,0,0,0.2); }
-        .acc-group.active .acc-content { max-height: 300px; padding: 15px; }
+                .acc-header.selected { color: var(--accent-alt); }
+                .acc-content {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Más rápido y reactivo */
+                    background: rgba(0,0,0,0.2);
+                }
+                .acc-group.active .acc-content { max-height: 300px; padding: 15px; }
         .pill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .course-pill { padding: 10px; background: var(--glass); border: 1px solid var(--border); border-radius: 12px; font-size: 0.75rem; font-weight: 700; text-align: center; cursor: pointer; }
         .course-pill.active { background: var(--accent); color: #000; border-color: var(--accent); }
@@ -299,7 +304,14 @@
         sendBtn.addEventListener('click', () => {
             const topic = document.getElementById('topic').value, time = document.getElementById('time').value, duration = document.getElementById('duration').value;
             if(!selectedCourse) { alert('Selecciona un curso.'); return; } if(!topic) { alert('Escribe un tema.'); return; }
-            const text = `Hola Mirzakhani, quiero reservar una SESIÓN PRIVADA 1-A-1:\n\n📚 Curso: ${selectedCourse}\n📖 Tema: ${topic}\n⏰ Hora: ${time}\n⏳ Duración: ${duration}`;
+            
+            // Emojis en formato Unicode para evitar errores de codificación
+            const emojiBooks = "\u{1F4DA}";
+            const emojiBook = "\u{1F4D6}";
+            const emojiClock = "\u{23F0}";
+            const emojiHourglass = "\u{23F3}";
+
+            const text = `Hola Mirzakhani, quiero reservar una SESIÓN PRIVADA 1-A-1:\n\n${emojiBooks} Curso: ${selectedCourse}\n${emojiBook} Tema: ${topic}\n${emojiClock} Hora: ${time}\n${emojiHourglass} Duración: ${duration}`;
             window.open(`https://wa.me/51965890475?text=${encodeURIComponent(text)}`);
         });
     </script>
