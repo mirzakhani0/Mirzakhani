@@ -114,7 +114,40 @@
         .benefit-card svg { width: 26px; height: 26px; color: var(--accent); filter: drop-shadow(0 0 8px var(--accent)); animation: icon-pulse 3s infinite ease-in-out; }
         @keyframes icon-pulse { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px var(--accent)); } 50% { transform: scale(1.1); filter: drop-shadow(0 0 15px var(--accent-alt)); } }
 
-        /* Modal */
+        /* Sección Institucional */
+        .business-section {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+            border: 1px solid #94a3b8;
+            border-radius: 35px;
+            padding: 35px 25px;
+            margin: 60px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .business-title { font-size: 1.3rem; font-weight: 900; color: #f1f5f9; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .business-subtitle { font-size: 0.85rem; color: #94a3b8; margin-bottom: 25px; line-height: 1.4; }
+        .business-services { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 30px; text-align: left; }
+                .service-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    font-size: 0.8rem;
+                    color: #cbd5e1;
+                    background: rgba(255,255,255,0.03);
+                    padding: 12px 15px;
+                    border-radius: 15px;
+                    border: 1px solid rgba(148, 163, 184, 0.1);
+                }
+                .service-item svg {
+                    flex-shrink: 0; /* Evita que el icono se achique con texto largo */
+                    width: 20px;
+                    height: 20px;
+                    color: var(--accent-alt);
+                }
+        .btn-business { background: #f1f5f9; color: #0f172a !important; font-weight: 800; border: none; box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+        .btn-business:hover { background: #fff; transform: translateY(-3px); }
+
+        /* Modal y Acordeón */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(15px); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal.active { display: flex; animation: fadeIn 0.3s ease; }
         .modal-content { background: var(--card-bg); border: 1px solid var(--accent); border-radius: 35px; padding: 35px 25px; width: 100%; max-width: 420px; position: relative; box-shadow: 0 0 50px rgba(255, 77, 0, 0.2); }
@@ -122,14 +155,9 @@
         .academic-accordion { margin-bottom: 20px; }
         .acc-group { margin-bottom: 10px; border-radius: 18px; overflow: hidden; background: var(--glass); border: 1px solid var(--border); }
         .acc-header { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--text-dim); }
-                .acc-header.selected { color: var(--accent-alt); }
-                .acc-content {
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Más rápido y reactivo */
-                    background: rgba(0,0,0,0.2);
-                }
-                .acc-group.active .acc-content { max-height: 300px; padding: 15px; }
+        .acc-header.selected { color: var(--accent-alt); }
+        .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1); background: rgba(0,0,0,0.2); }
+        .acc-group.active .acc-content { max-height: 300px; padding: 15px; }
         .pill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .course-pill { padding: 10px; background: var(--glass); border: 1px solid var(--border); border-radius: 12px; font-size: 0.75rem; font-weight: 700; text-align: center; cursor: pointer; }
         .course-pill.active { background: var(--accent); color: #000; border-color: var(--accent); }
@@ -137,8 +165,9 @@
         .form-group label { display: block; font-size: 0.7rem; font-weight: 800; margin-bottom: 8px; color: var(--accent); text-transform: uppercase; }
         .form-group input, .form-group select { width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 12px; border-radius: 15px; color: #fff; font-size: 0.9rem; outline: none; }
 
-        body.light-theme .modal-content { background: #fff; border-color: var(--accent); }
-        body.light-theme .form-group input, body.light-theme .form-group select { background: #f9f9f9; color: #000; }
+        body.light-theme .modal-content { background: #ffffff; border-color: #b8860b; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        body.light-theme .form-group label { color: #8b6508; }
+        body.light-theme .form-group input, body.light-theme .form-group select { background: #fdfdfd; border-color: #e0e0e0; color: #2d1a10; }
         body.light-theme .acc-group { background: #f5f5f5; }
 
         /* UI Dinámica */
@@ -194,7 +223,9 @@
                 <span class="tag">Letras</span><span class="tag">Humanidades</span>
             </div>
             <p style="font-size: 0.9rem; color: var(--text-dim); max-width: 380px; margin-bottom: 25px; line-height: 1.5;">Acompañándote en el proceso de construir una mentalidad inquebrantable a través de la disciplina y el conocimiento.</p>
+            
             <section class="countdown-box reveal"><h3 style="font-size: 0.9rem; font-weight: 800;">PRÓXIMO LIVE EDUCATIVO</h3><div class="timer" id="countdown"><div class="time-unit"><span class="time-val" id="hours">00</span><span class="time-label">Horas</span></div><div class="time-unit"><span class="time-val" id="minutes">00</span><span class="time-label">Min</span></div><div class="time-unit"><span class="time-val" id="seconds">00</span><span class="time-label">Seg</span></div></div></section>
+            
             <a href="https://chat.whatsapp.com/DyQpStJxwHLFnWyXTkwDln?mode=gi_t" class="btn btn-whatsapp pulse"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Únete a la Comunidad Gratis</a>
             <div style="font-size: 0.75rem; font-weight: 800; color: var(--text-dim); letter-spacing: 0.15em; margin: 15px 0 10px; text-transform: uppercase;">Nuestros Canales Oficiales</div>
             <a href="https://www.tiktok.com/@mirzakhani211" class="btn btn-secondary">Canal Oficial <span class="live-dot"></span></a>
@@ -222,6 +253,18 @@
 
         <section class="faq-section reveal"><h2 class="section-title">Preguntas Frecuentes</h2><div class="faq-item"><button class="faq-question">¿Es realmente gratis? <span>+</span></button><div class="faq-answer">Sí, el acceso a la comunidad de WhatsApp y los recursos básicos no tienen costo.</div></div><div class="faq-item"><button class="faq-question">¿Qué pasa si falto a un Live? <span>+</span></button><div class="faq-answer">Compartimos los puntos clave y recursos en el grupo de WhatsApp.</div></div><div class="faq-item"><button class="faq-question">¿Recibiré mucho spam? <span>+</span></button><div class="faq-answer">Cero spam. Solo notificaciones importantes y un tip de valor diario.</div></div></section>
         
+        <!-- ALIANZAS ESTRATÉGICAS -->
+        <section class="business-section reveal">
+            <h2 class="business-title">Alianzas Estratégicas</h2>
+            <p class="business-subtitle">Servicios de asesoría y docencia para instituciones educativas que buscan excelencia y modernización.</p>
+            <div class="business-services">
+                <div class="service-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Docencia Especializada (Primaria, Secundaria y Preuniversitario) en Matemáticas y Ciencias</div>
+                <div class="service-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Capacitación en Enseñanza Virtual y Pizarras Digitales</div>
+                <div class="service-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Asesoría Académica y Mejora de Resultados</div>
+            </div>
+            <button class="btn btn-business" id="btn-business">SOLICITAR PROPUESTA ACADÉMICA</button>
+        </section>
+
         <footer style="padding: 60px 0; text-align: center; border-top: 1px solid var(--border);"><div class="footer-quote" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 25px; color: var(--text-dim); text-transform: uppercase;">"La evolución es el único camino."</div><a href="https://chat.whatsapp.com/DyQpStJxwHLFnWyXTkwDln" class="btn btn-whatsapp">Únete a la Comunidad Gratis</a><p style="font-size: 0.75rem; color: var(--text-dim); opacity: 0.4; margin-top: 40px;">© 2026 Mirzakhani. Todos los derechos reservados.</p></footer>
     </main>
 
@@ -265,53 +308,25 @@
         let currentSlide = 0; const slides = document.querySelectorAll('.testimonial-slide');
         setInterval(() => { slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }, 5000);
 
-        // Lógica de Reserva corregida
+        // Lógica de Reserva
         const modal = document.getElementById('booking-modal'), openBtn = document.getElementById('open-booking'), closeBtn = document.getElementById('close-modal'), sendBtn = document.getElementById('send-booking');
         let selectedCourse = "";
         const categoryNames = { 'acc-mat': 'MATEMÁTICAS', 'acc-cie': 'CIENCIAS', 'acc-let': 'LETRAS' };
-
         openBtn.addEventListener('click', () => modal.classList.add('active'));
         closeBtn.addEventListener('click', () => modal.classList.remove('active'));
         window.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
-
-        document.querySelectorAll('.acc-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const group = header.parentElement, isActive = group.classList.contains('active');
-                document.querySelectorAll('.acc-group').forEach(g => g.classList.remove('active'));
-                if(!isActive) group.classList.add('active');
-            });
-        });
-
-        document.querySelectorAll('.course-pill').forEach(pill => {
-            pill.addEventListener('click', () => {
-                const group = pill.closest('.acc-group'), header = group.querySelector('.acc-header'), isAlreadyActive = pill.classList.contains('active');
-                document.querySelectorAll('.course-pill').forEach(p => p.classList.remove('active'));
-                if (isAlreadyActive) {
-                    selectedCourse = "";
-                    header.innerHTML = `<span>${categoryNames[group.id]}</span> <span>▼</span>`;
-                    header.classList.remove('selected');
-                } else {
-                    pill.classList.add('active');
-                    selectedCourse = pill.innerText;
-                    header.innerHTML = `<span>✅ ${selectedCourse}</span> <span>▼</span>`;
-                    header.classList.add('selected');
-                    document.querySelectorAll('.acc-header').forEach(h => { if(h.parentElement.id !== group.id) { h.innerHTML = `<span>${categoryNames[h.parentElement.id]}</span> <span>▼</span>`; h.classList.remove('selected'); } });
-                    group.classList.remove('active');
-                }
-            });
-        });
-
+        document.querySelectorAll('.acc-header').forEach(header => { header.addEventListener('click', () => { const group = header.parentElement, isActive = group.classList.contains('active'); document.querySelectorAll('.acc-group').forEach(g => g.classList.remove('active')); if(!isActive) group.classList.add('active'); }); });
+        document.querySelectorAll('.course-pill').forEach(pill => { pill.addEventListener('click', () => { const group = pill.closest('.acc-group'), header = group.querySelector('.acc-header'), isAlreadyActive = pill.classList.contains('active'); document.querySelectorAll('.course-pill').forEach(p => p.classList.remove('active')); if (isAlreadyActive) { selectedCourse = ""; header.innerHTML = `<span>${categoryNames[group.id]}</span> <span>▼</span>`; header.classList.remove('selected'); } else { pill.classList.add('active'); selectedCourse = pill.innerText; header.innerHTML = `<span>✅ ${selectedCourse}</span> <span>▼</span>`; header.classList.add('selected'); document.querySelectorAll('.acc-header').forEach(h => { if(h.parentElement.id !== group.id) { h.innerHTML = `<span>${categoryNames[h.parentElement.id]}</span> <span>▼</span>`; h.classList.remove('selected'); } }); group.classList.remove('active'); } }); });
         sendBtn.addEventListener('click', () => {
             const topic = document.getElementById('topic').value, time = document.getElementById('time').value, duration = document.getElementById('duration').value;
             if(!selectedCourse) { alert('Selecciona un curso.'); return; } if(!topic) { alert('Escribe un tema.'); return; }
-            
-            // Emojis en formato Unicode para evitar errores de codificación
-            const emojiBooks = "\u{1F4DA}";
-            const emojiBook = "\u{1F4D6}";
-            const emojiClock = "\u{23F0}";
-            const emojiHourglass = "\u{23F3}";
+            const text = `Hola Mirzakhani, quiero reservar una SESIÓN PRIVADA 1-A-1:\n\n• Curso: ${selectedCourse}\n• Tema: ${topic}\n• Hora: ${time}\n• Duración: ${duration}`;
+            window.open(`https://wa.me/51965890475?text=${encodeURIComponent(text)}`);
+        });
 
-            const text = `Hola Mirzakhani, quiero reservar una SESIÓN PRIVADA 1-A-1:\n\n${emojiBooks} Curso: ${selectedCourse}\n${emojiBook} Tema: ${topic}\n${emojiClock} Hora: ${time}\n${emojiHourglass} Duración: ${duration}`;
+        // Lógica Alianzas
+        document.getElementById('btn-business').addEventListener('click', () => {
+            const text = "Hola Mirzakhani, represento a una institución educativa y me gustaría coordinar una reunión para servicios de asesoría o docencia especializada.";
             window.open(`https://wa.me/51965890475?text=${encodeURIComponent(text)}`);
         });
     </script>
