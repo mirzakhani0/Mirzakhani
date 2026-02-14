@@ -4,36 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirzakhani | Resiliencia sobre Resistencia</title>
-    <meta name="description" content="Aprende para crecer. Enseñar para transformar. Únete a la comunidad exclusiva de Mirzakhani y domina la mentalidad de resiliencia.">
     
-    <!-- SEO y Redes Sociales Avanzado -->
+    <!-- SEO y Redes Sociales -->
     <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <link rel="canonical" href="https://tudominio.com">
     <meta property="og:title" content="Mirzakhani | Resiliencia sobre Resistencia">
-    <meta property="og:description" content="Domina la mentalidad de resiliencia. Acceso gratuito a clases en vivo y recursos exclusivos.">
+    <meta property="og:description" content="Domina la mentalidad de resiliencia. Acceso gratuito a la comunidad.">
     <meta property="og:image" content="logo.jpg">
-    <meta property="og:url" content="https://tudominio.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Mirzakhani">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mirzakhani | Resiliencia">
     <meta name="theme-color" content="#050505">
 
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg: #050505;
             --card-bg: rgba(20, 20, 20, 0.7);
             --text-main: #ffffff;
             --text-dim: #a1a1a1;
-            --accent: #ff4d00; /* Naranja rojizo vibrante */
-            --accent-alt: #ffcc00; /* Amarillo fuego */
+            --accent: #ff4d00;
+            --accent-alt: #ffcc00;
             --whatsapp: #25D366;
-            --whatsapp-hover: #20ba5a;
-            --tiktok: #ff0050;
-            --glass: rgba(255, 255, 255, 0.05);
             --border: rgba(255, 255, 255, 0.1);
             --star-color: rgba(255, 77, 0, 1);
-            --glow: rgba(255, 77, 0, 0.3);
+            --glow: rgba(255, 77, 0, 0.2);
         }
 
         body.light-theme {
@@ -41,10 +36,9 @@
             --card-bg: rgba(255, 255, 255, 0.7);
             --text-main: #2d1a10;
             --text-dim: #7c5e4d;
-            --glass: rgba(0, 0, 0, 0.03);
             --border: rgba(0, 0, 0, 0.08);
             --star-color: rgba(255, 77, 0, 0.5);
-            --glow: rgba(255, 77, 0, 0.15);
+            --glow: rgba(255, 77, 0, 0.1);
         }
 
         * {
@@ -52,13 +46,13 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
+            font-family: 'Poppins', sans-serif;
             transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         body {
             background-color: var(--bg);
             color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             animation: fadeIn 1.2s ease-out;
@@ -76,19 +70,12 @@
             padding: 0 20px;
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-        }
+        .reveal { opacity: 0; transform: translateY(20px); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Hero */
+        /* Header */
         header {
-            padding: 60px 0 40px;
+            padding: 50px 0 30px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -96,45 +83,54 @@
         }
 
         .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 35px; /* Squircle */
+            width: 105px;
+            height: 105px;
+            border-radius: 32px;
             background: linear-gradient(45deg, var(--accent), var(--accent-alt));
             margin-bottom: 25px;
             padding: 3px;
-            box-shadow: 0 10px 30px var(--glow);
+            box-shadow: 0 10px 25px var(--glow);
         }
 
         .profile-img img {
             width: 100%;
             height: 100%;
-            border-radius: 32px;
+            border-radius: 29px;
             object-fit: cover;
         }
 
-        h1, .tagline {
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            text-transform: uppercase;
-            line-height: 0.9;
-        }
-
         h1 {
-            font-size: 2.8rem;
-            transform: scaleY(1.1);
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px var(--glow));
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px var(--glow));
         }
 
         .tagline {
             color: var(--accent);
-            font-size: 1rem;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
             letter-spacing: 0.2em;
-            margin-bottom: 12px;
-            opacity: 1;
+            margin-bottom: 10px;
             background: linear-gradient(to right, var(--accent), var(--accent-alt));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .impact-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         /* Buttons */
@@ -144,442 +140,481 @@
             justify-content: center;
             gap: 12px;
             width: 100%;
-            padding: 20px 24px;
-            border-radius: 24px;
+            padding: 18px 24px;
+            border-radius: 22px;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 16px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 15px;
             border: 1px solid var(--border);
             cursor: pointer;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            position: relative;
         }
 
-        .btn:hover {
-            transform: translateY(-4px) scale(1.02);
-        }
+        .btn:hover { transform: translateY(-3px); }
 
         .btn-whatsapp {
             background-color: var(--whatsapp);
             color: #000;
             border: none;
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.25);
         }
 
-        .btn-secondary {
+        .btn-secondary { background: var(--card-bg); color: var(--text-main); }
+
+        /* Botón Premium Gold */
+        .btn-premium {
+            background: linear-gradient(45deg, #d4af37, #f1c40f, #d4af37);
+            background-size: 200% auto;
+            color: #000 !important;
+            border: none;
+            font-weight: 900;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            animation: gold-shine 3s linear infinite;
+        }
+
+        @keyframes gold-shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active { display: flex; animation: fadeIn 0.3s ease; }
+
+        .modal-content {
             background: var(--card-bg);
-            color: var(--text-main);
+            border: 1px solid #d4af37;
+            border-radius: 30px;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
         }
 
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            box-shadow: 0 10px 20px var(--glow);
-        }
-
-        .microcopy {
-            font-size: 0.75rem;
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 20px;
             color: var(--text-dim);
+            cursor: pointer;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.75rem; font-weight: 800; margin-bottom: 8px; color: #d4af37; text-transform: uppercase; }
+        .form-group select, .form-group input {
+            width: 100%;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .form-group option { background: #111; }
+
+        /* Punto Vivo Palpitante */
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            position: absolute;
+            right: 20px;
+            box-shadow: 0 0 10px #ff0000;
+            animation: live-pulse 1.5s infinite;
+        }
+
+        @keyframes live-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Floating UI */
+        .floating-ui {
+            position: fixed;
+            z-index: 1000;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 46px;
+            height: 46px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .share-btn { bottom: 25px; left: 25px; }
+        .theme-toggle { top: 25px; right: 25px; }
+        .back-top { 
+            bottom: 25px; 
+            right: 25px; 
+            opacity: 0; 
+            pointer-events: none; 
+            transition: all 0.3s ease;
+            color: var(--accent);
+        }
+        .back-top.visible { opacity: 1; pointer-events: auto; }
+
+        /* El Camino (Roadmap) */
+        .roadmap {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .roadmap-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 25px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .step-num {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--accent), var(--accent-alt));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #000;
+        }
+
+        .step-card h4 { font-size: 0.95rem; margin-bottom: 2px; }
+        .step-card p { font-size: 0.8rem; color: var(--text-dim); }
+
+        /* Benefits */
+        .section-title {
+            font-size: 1.4rem;
             margin-bottom: 25px;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            padding: 25px 15px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .benefit-card h3 { font-size: 0.9rem; font-weight: 800; }
+        .benefit-card p { font-size: 0.75rem; color: var(--text-dim); line-height: 1.3; }
+
+        .benefit-card svg {
+            width: 26px;
+            height: 26px;
+            color: var(--accent);
+            filter: drop-shadow(0 0 8px var(--accent));
+            animation: icon-pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes icon-pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px var(--accent)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 15px var(--accent-alt)); }
         }
 
         /* Countdown */
         .countdown-box {
             background: var(--card-bg);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 30px 20px;
-            border-radius: 35px;
+            padding: 25px 20px;
+            border-radius: 30px;
             border: 1px solid var(--accent);
-            box-shadow: 0 0 40px var(--glow);
             text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .time-val {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--accent);
-            background: linear-gradient(to bottom, var(--accent), var(--accent-alt));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-
-        .time-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-dim);
-        }
-
-        /* Benefits Grid */
-        .section-title {
-            font-size: 1.6rem;
             margin-bottom: 30px;
-            text-align: center;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--text-main);
+            width: 100%;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .benefit-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 30px 15px;
-            border-radius: 35px;
-            border: 1px solid var(--border);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .benefit-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 15px 30px var(--glow);
-            transform: translateY(-5px);
-        }
-
-        .benefit-card svg {
-            width: 35px;
-            height: 35px;
-            color: var(--accent);
-            filter: drop-shadow(0 0 12px var(--accent));
-        }
-
-        .benefit-card h3 {
-            font-size: 1.1rem;
-            line-height: 1;
-            font-weight: 800;
-        }
-
-        .benefit-card p {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            line-height: 1.3;
-        }
+        .timer { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
+        .time-val { font-size: 1.8rem; font-weight: 900; color: var(--accent); }
+        .time-label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-dim); }
 
         /* FAQ */
-        .faq-section { margin: 60px 0; }
         .faq-item {
-            background: var(--glass);
-            backdrop-filter: blur(8px);
+            background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            margin-bottom: 15px;
+            border-radius: 20px;
+            margin-bottom: 12px;
             overflow: hidden;
         }
 
         .faq-question {
-            padding: 22px;
+            padding: 18px;
             width: 100%;
             text-align: left;
             background: none;
             border: none;
             color: var(--text-main);
-            font-weight: 800;
+            font-weight: 700;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
-        .faq-answer {
-            padding: 0 22px;
-            max-height: 0;
-            overflow: hidden;
-            color: var(--text-dim);
-            font-size: 0.95rem;
-        }
+        .faq-answer { padding: 0 18px; max-height: 0; overflow: hidden; color: var(--text-dim); font-size: 0.85rem; }
+        .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 18px; }
 
-        .faq-item.active {
-            border-color: var(--accent);
-            background: var(--card-bg);
-        }
+        /* Effects */
+        .spark { position: fixed; width: 4px; height: 4px; background: var(--accent-alt); border-radius: 50%; pointer-events: none; z-index: 9999; animation: spark-fade 0.8s forwards; }
+        @keyframes spark-fade { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
 
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding-bottom: 22px;
-        }
+        .night { position: fixed; width: 150%; height: 150%; transform: rotateZ(45deg); top: -50%; left: -20%; z-index: -1; pointer-events: none; }
+        .shooting_star { position: absolute; left: var(--pos-x); top: var(--pos-y); height: 2px; background: linear-gradient(-45deg, var(--star-color), rgba(255, 255, 255, 0)); border-radius: 999px; filter: drop-shadow(0 0 6px var(--star-color)); animation: tail var(--dur) ease-in-out infinite, shooting var(--dur) ease-in-out infinite; animation-delay: var(--delay); opacity: 0; }
+        @keyframes tail { 0% { width: 0; opacity: 0; } 30% { width: 80px; opacity: 1; } 100% { width: 0; opacity: 0; } }
+        @keyframes shooting { 0% { transform: translateX(0); } 100% { transform: translateX(800px); } }
 
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 25px;
-            right: 25px;
-            z-index: 1000;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            width: 50px;
-            height: 50px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        /* Footer */
-        footer {
-            padding: 80px 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-quote {
-            font-size: 1.3rem;
-            font-weight: 900;
-            margin-bottom: 30px;
-            color: var(--text-dim);
-            text-transform: uppercase;
-        }
-
-        .copyright {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            opacity: 0.4;
-            margin-top: 40px;
-        }
-
-        .pulse {
-            animation: pulse 2.5s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            70% { transform: scale(1.03); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        /* Stars */
-        .night {
-            position: fixed;
-            width: 150%;
-            height: 150%;
-            transform: rotateZ(45deg);
-            top: -50%;
-            left: -20%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .shooting_star {
-            position: absolute;
-            left: var(--pos-x);
-            top: var(--pos-y);
-            height: 2px;
-            background: linear-gradient(-45deg, var(--star-color), rgba(255, 255, 255, 0));
-            border-radius: 999px;
-            filter: drop-shadow(0 0 6px var(--star-color));
-            animation: tail var(--dur) ease-in-out infinite, shooting var(--dur) ease-in-out infinite;
-            animation-delay: var(--delay);
-            opacity: 0;
-        }
-
-        @keyframes tail {
-            0% { width: 0; opacity: 0; }
-            30% { width: 100px; opacity: 1; }
-            100% { width: 0; opacity: 0; }
-        }
-
-        @keyframes shooting {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(1000px); }
-        }
+        .pulse { animation: pulse 2.5s infinite ease-in-out; }
+        @keyframes pulse { 0% { transform: scale(1); } 70% { transform: scale(1.03); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
-    <button class="theme-toggle" id="theme-btn" aria-label="Cambiar tema">
-        <svg id="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-    </button>
+    <button class="floating-ui theme-toggle" id="theme-btn"><svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
+    <button class="floating-ui share-btn" id="share-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg></button>
+    <button class="floating-ui back-top" id="back-top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+    
     <div class="night" id="star-container"></div>
 
     <main class="container">
         <header>
-            <div class="profile-img">
-                <img src="logo.jpg" alt="Mirzakhani Logo">
-            </div>
+            <div class="profile-img"><img src="logo.jpg" alt="Mirzakhani Logo"></div>
             <div class="tagline">Mirzakhani</div>
             <h1>RESILIENCIA SOBRE RESISTENCIA</h1>
-            <p style="font-size: 1rem; color: var(--text-dim); max-width: 380px; margin-bottom: 30px; line-height: 1.5;">
-                Acompañándote en el proceso de construir una mentalidad inquebrantable a través de la disciplina y el conocimiento.
-            </p>
-
-            <section class="countdown-box reveal" style="width: 100%;">
-                <h3 style="font-size: 1.1rem; font-weight: 900;">PRÓXIMO LIVE EDUCATIVO</h3>
-                <div class="timer" id="countdown">
-                    <div class="time-unit">
-                        <span class="time-val" id="hours">00</span>
-                        <span class="time-label">Horas</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-val" id="minutes">00</span>
-                        <span class="time-label">Min</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-val" id="seconds">00</span>
-                        <span class="time-label">Seg</span>
-                    </div>
-                </div>
-            </section>
+            <div class="impact-badge">🔥 +1,200 mentes forjándose en disciplina</div>
+            <p style="font-size: 0.9rem; color: var(--text-dim); max-width: 380px; margin-bottom: 25px; line-height: 1.5;">Acompañándote en el proceso de construir una mentalidad inquebrantable a través de la disciplina y el conocimiento.</p>
             
-            <a href="https://chat.whatsapp.com/DyQpStJxwHLFnWyXTkwDln?mode=gi_t" class="btn btn-whatsapp pulse">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Únete a la Comunidad Gratis
-            </a>
-            <div class="microcopy">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Acceso inmediato. Gratis.
-            </div>
-
-            <a href="https://www.tiktok.com/@mirzakhani211?_r=1&_t=ZS-93ozXDSK6qa" class="btn btn-secondary"> Canal Oficial </a>
-            <a href="https://www.tiktok.com/@academia.mirzakhani?_r=1&_t=ZS-93ozattzKEv" class="btn btn-secondary"> Academia Mirzakhani </a>
+            <section class="countdown-box reveal"><h3 style="font-size: 0.9rem; font-weight: 800;">PRÓXIMO LIVE EDUCATIVO</h3><div class="timer" id="countdown"><div class="time-unit"><span class="time-val" id="hours">00</span><span class="time-label">Horas</span></div><div class="time-unit"><span class="time-val" id="minutes">00</span><span class="time-label">Min</span></div><div class="time-unit"><span class="time-val" id="seconds">00</span><span class="time-label">Seg</span></div></div></section>
+            
+            <a href="https://chat.whatsapp.com/DyQpStJxwHLFnWyXTkwDln?mode=gi_t" class="btn btn-whatsapp pulse"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Únete a la Comunidad Gratis</a>
+            
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--text-dim); letter-spacing: 0.15em; margin: 15px 0 10px; text-transform: uppercase;">Nuestros Canales Oficiales</div>
+            <a href="https://www.tiktok.com/@mirzakhani211" class="btn btn-secondary">Canal Oficial <span class="live-dot"></span></a>
+            <a href="https://www.tiktok.com/@academia.mirzakhani" class="btn btn-secondary">Academia Mirzakhani</a>
         </header>
 
-        <section class="reveal">
-            <h2 class="section-title">¿Qué ganas al entrar?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                    <h3>Clases en Vivo</h3>
-                    <p>Sesiones exclusivas semanales.</p>
+        <section class="reveal"><h2 class="section-title">¿Qué ganas al entrar?</h2><div class="benefits-grid"><div class="benefit-card"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg><h3>Clases en Vivo</h3><p>Sesiones exclusivas semanales.</p></div><div class="benefit-card"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><h3>Recursos PDF</h3><p>Guías prácticas premium.</p></div><div class="benefit-card"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg><h3>Tips Diarios</h3><p>Consejos para tu disciplina.</p></div><div class="benefit-card"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg><h3>Avisos VIP</h3><p>Acceso prioritario a todo.</p></div></div></section>
+
+        <!-- CAMINO DE LA RESILIENCIA -->
+        <section class="roadmap reveal">
+            <h2 class="section-title">El Camino de la Resiliencia</h2>
+            <div class="roadmap-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div><h4>Conexión y Recursos</h4><p>Únete a la comunidad y accede a material exclusivo de matemáticas y mentalidad.</p></div>
                 </div>
-                <div class="benefit-card">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    <h3>Recursos PDF</h3>
-                    <p>Guías prácticas premium.</p>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div><h4>Entrenamiento en Vivo</h4><p>Domina retos lógicos y forja tu disciplina en nuestras clases semanales.</p></div>
                 </div>
-                <div class="benefit-card">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <h3>Tips Diarios</h3>
-                    <p>Consejos para tu disciplina.</p>
-                </div>
-                <div class="benefit-card">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
-                    <h3>Avisos VIP</h3>
-                    <p>Acceso prioritario a todo.</p>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div><h4>Mentalidad Maestra</h4><p>Aplica el razonamiento y la resiliencia para resolver retos y transformar tu vida.</p></div>
                 </div>
             </div>
         </section>
 
-        <section class="faq-section reveal">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="faq-item">
-                <button class="faq-question">¿Es realmente gratis? <span>+</span></button>
-                <div class="faq-answer">Sí, el acceso a la comunidad de WhatsApp y los recursos básicos no tienen costo.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">¿Qué pasa si falto a un Live? <span>+</span></button>
-                <div class="faq-answer">Compartimos los puntos clave y recursos en el grupo de WhatsApp.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">¿Recibiré mucho spam? <span>+</span></button>
-                <div class="faq-answer">Cero spam. Solo notificaciones importantes y un tip de valor diario.</div>
-            </div>
+        <!-- CTA CLASES PRIVADAS -->
+        <section class="reveal" style="text-align: center; padding: 20px 0;">
+            <button class="btn btn-premium" id="open-booking">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                SESIÓN PERSONALIZADA 1-A-1
+            </button>
+            <p style="font-size: 0.7rem; color: var(--text-dim); margin-top: -5px;">Reserva tu clase privada de 6 PM a 10 PM</p>
         </section>
 
-        <footer>
-            <div class="footer-quote">"La evolución es el único camino."</div>
-            <a href="https://chat.whatsapp.com/DyQpStJxwHLFnWyXTkwDln?mode=gi_t" class="btn btn-whatsapp">
-                Únete a la Comunidad Gratis
-            </a>
-            <p class="copyright">© 2026 Mirzakhani. Todos los derechos reservados.</p>
-        </footer>
+        <section class="faq-section reveal"><h2 class="section-title">Preguntas Frecuentes</h2><div class="faq-item"><button class="faq-question">¿Es realmente gratis? <span>+</span></button><div class="faq-answer">Sí, el acceso a la comunidad de WhatsApp y los recursos básicos no tienen costo.</div></div><div class="faq-item"><button class="faq-question">¿Qué pasa si falto a un Live? <span>+</span></button><div class="faq-answer">Compartimos los puntos clave y recursos en el grupo de WhatsApp.</div></div><div class="faq-item"><button class="faq-question">¿Recibiré mucho spam? <span>+</span></button><div class="faq-answer">Cero spam. Solo notificaciones importantes y un tip de valor diario.</div></div></section>
+        
+        <footer style="padding: 60px 0; text-align: center; border-top: 1px solid var(--border);"><div class="footer-quote" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 25px; color: var(--text-dim); text-transform: uppercase;">"La evolución es el único camino."</div><a href="https://chat.whatsapp.com/DyQpStJxwHLFnWyXTkwDln" class="btn btn-whatsapp">Únete a la Comunidad Gratis</a><p style="font-size: 0.75rem; color: var(--text-dim); opacity: 0.4; margin-top: 40px;">© 2026 Mirzakhani. Todos los derechos reservados.</p></footer>
     </main>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
+    <!-- MODAL DE RESERVA -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-close" id="close-modal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
+            <h3 style="color: #d4af37; margin-bottom: 20px; text-align: center;">RESERVAR SESIÓN</h3>
+            
+            <div class="form-group">
+                <label>Selecciona el Curso</label>
+                <select id="course">
+                    <optgroup label="CIENCIAS">
+                        <option>Biología</option>
+                        <option>Anatomía</option>
+                        <option>Física</option>
+                        <option>Química</option>
+                    </optgroup>
+                    <optgroup label="MATEMÁTICAS">
+                        <option>Raz. Matemático</option>
+                        <option>Aritmética</option>
+                        <option>Álgebra</option>
+                        <option>Geometría</option>
+                        <option>Trigonometría</option>
+                    </optgroup>
+                    <optgroup label="LETRAS Y HUMANIDADES">
+                        <option>Psicología</option>
+                        <option>Filosofía</option>
+                        <option>Geografía</option>
+                        <option>Historia</option>
+                        <option>Educación Cívica</option>
+                        <option>Economía</option>
+                        <option>Literatura</option>
+                        <option>Raz. Verbal</option>
+                    </optgroup>
+                </select>
+            </div>
 
+            <div class="form-group">
+                <label>Tema Específico</label>
+                <input type="text" id="topic" placeholder="Ej: Leyes de Newton, Triángulos...">
+            </div>
+
+            <div class="form-group">
+                <label>Horario (Disponible 6PM - 10PM)</label>
+                <select id="time">
+                    <option value="18:00">06:00 PM</option>
+                    <option value="19:00">07:00 PM</option>
+                    <option value="20:00">08:00 PM</option>
+                    <option value="21:00">09:00 PM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Duración de la Clase</label>
+                <select id="duration">
+                    <option value="1 hora">1 Hora</option>
+                    <option value="2 horas">2 Horas</option>
+                    <option value="3 horas">3 Horas</option>
+                    <option value="4 horas">4 Horas</option>
+                </select>
+            </div>
+
+            <button class="btn btn-premium" style="width: 100%; margin-top: 10px;" id="send-booking">SOLICITAR POR WHATSAPP</button>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        function startCountdown() {
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-            let target = new Date();
-            target.setHours(22, 30, 0, 0);
-            if (new Date() > target) target.setDate(target.getDate() + 1);
+        // Botón Volver Arriba
+        const backTop = document.getElementById('back-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) backTop.classList.add('visible');
+            else backTop.classList.remove('visible');
+        });
+        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            function updateTimer() {
-                const now = new Date();
-                const diff = target - now;
-                const h = Math.floor(diff / (1000 * 60 * 60));
-                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const s = Math.floor((diff % (1000 * 60)) / 1000);
-                hoursEl.innerText = h.toString().padStart(2, '0');
-                minutesEl.innerText = m.toString().padStart(2, '0');
-                secondsEl.innerText = s.toString().padStart(2, '0');
+        // Estela de Chispas
+        window.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.85) {
+                const spark = document.createElement('div');
+                spark.className = 'spark';
+                spark.style.left = e.clientX + 'px';
+                spark.style.top = e.clientY + 'px';
+                document.body.appendChild(spark);
+                setTimeout(() => spark.remove(), 800);
             }
-            setInterval(updateTimer, 1000);
-            updateTimer();
+        });
+
+        // Compartir
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            try { await navigator.share({ title: 'Mirzakhani', url: window.location.href }); } 
+            catch { navigator.clipboard.writeText(window.location.href); alert('Enlace copiado'); }
+        });
+
+        function startCountdown() {
+            const hE = document.getElementById('hours'), mE = document.getElementById('minutes'), sE = document.getElementById('seconds');
+            let t = new Date(); t.setHours(22, 30, 0, 0); if (new Date() > t) t.setDate(t.getDate() + 1);
+            setInterval(() => {
+                const diff = t - new Date();
+                hE.innerText = Math.floor(diff/36e5).toString().padStart(2,'0');
+                mE.innerText = Math.floor((diff%36e5)/6e4).toString().padStart(2,'0');
+                sE.innerText = Math.floor((diff%6e4)/1e3).toString().padStart(2,'0');
+            }, 1000);
         }
         startCountdown();
 
         const container = document.getElementById("star-container");
         for (let i = 0; i < 20; i++) {
-            const span = document.createElement("span");
-            span.classList.add("shooting_star");
-            span.style.setProperty("--pos-x", `${Math.random() * 100}%`);
-            span.style.setProperty("--pos-y", `${Math.random() * 100}%`);
-            span.style.setProperty("--dur", `${2 + Math.random() * 3}s`);
-            span.style.setProperty("--delay", `${Math.random() * 10}s`);
-            container.appendChild(span);
+            const s = document.createElement("span"); s.className = "shooting_star";
+            s.style.setProperty("--pos-x", Math.random()*100+"%"); s.style.setProperty("--pos-y", Math.random()*100+"%");
+            s.style.setProperty("--dur", 2+Math.random()*3+"s"); s.style.setProperty("--delay", Math.random()*10+"s");
+            container.appendChild(s);
         }
 
-        const themeBtn = document.getElementById('theme-btn');
-        const themeIcon = document.getElementById('theme-icon');
-        const sunIcon = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
-        const moonIcon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+        const tB = document.getElementById('theme-btn'), tI = document.getElementById('theme-icon'), b = document.body;
+        const sun = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+        const moon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+        function updateT(l) { b.classList.toggle('light-theme', l); tI.innerHTML = l ? moon : sun; localStorage.setItem('theme', l?'light':'dark'); }
+        updateT(localStorage.getItem('theme') === 'light');
+        tB.addEventListener('click', () => updateT(!b.classList.contains('light-theme')));
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
 
-        function setTheme(isLight) {
-            if (isLight) {
-                document.body.classList.add('light-theme');
-                themeIcon.innerHTML = moonIcon;
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.body.classList.remove('light-theme');
-                themeIcon.innerHTML = sunIcon;
-                localStorage.setItem('theme', 'dark');
-            }
-        }
+        // Lógica de Reserva de Clases
+        const modal = document.getElementById('booking-modal');
+        const openBtn = document.getElementById('open-booking');
+        const closeBtn = document.getElementById('close-modal');
+        const sendBtn = document.getElementById('send-booking');
 
-        const savedTheme = localStorage.getItem('theme');
-        setTheme(savedTheme === 'light');
+        openBtn.addEventListener('click', () => modal.classList.add('active'));
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        window.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
 
-        themeBtn.addEventListener('click', () => {
-            setTheme(!document.body.classList.contains('light-theme'));
-        });
+        sendBtn.addEventListener('click', () => {
+            const course = document.getElementById('course').value;
+            const topic = document.getElementById('topic').value;
+            const time = document.getElementById('time').value;
+            const duration = document.getElementById('duration').value;
 
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => button.parentElement.classList.toggle('active'));
+            if(!topic) { alert('Por favor, escribe un tema.'); return; }
+
+            const text = `Hola Mirzakhani, quiero reservar una SESIÓN PRIVADA 1-A-1:\n\n📚 Curso: ${course}\n📖 Tema: ${topic}\n⏰ Hora: ${time}\n⏳ Duración: ${duration}`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/51965890475?text=${encodedText}`);
         });
     </script>
 </body>
